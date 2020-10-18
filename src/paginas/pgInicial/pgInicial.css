@@ -1,0 +1,108 @@
+.inicial {
+    text-align: center;
+}
+
+.inicial-logo {
+    height: 30vmin;
+    width: 30vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .inicial-logo {
+        animation: App-inicial-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-inicial-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.inicial-header {
+    background-color: #dbe8ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(8px + 2vmin);
+    color: rgb(9, 0, 41);
+}
+
+p.title {
+    font-family: 'Trebuchet MS';
+    font-size: 26px;
+    color: #262626;
+    font-weight: bold;
+}
+
+p.selOpcao {
+    font-size: 20px;
+    color: #262626;
+    padding-top: 20px;
+}
+
+div.opcoes {
+    width: 85vw;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    font-size: calc(3px + 2vmin);  
+}
+
+div.opcoes a {
+    color: rgb(9, 0, 41);
+    font-style: normal;
+    text-decoration: none;
+    
+}
+
+div.opcoes a:hover {
+    color: #008020;
+    font-style: normal;
+    text-decoration: none
+}
+
+div.menu {
+    width: 500px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(55, 204, 204, 0.295);  
+    position: relative; 
+    transition: all .3s ease-in-out
+}
+div.menu:hover{
+    opacity: 70%;
+    transform: scale(1.1);
+}
+div.menu:hover .static{
+    opacity:0;
+}
+div.menu:hover .nextPage{
+    background-color: rgba(16, 85, 85, 0.295); 
+}
+
+div.nextPage{
+    width: 500px;
+    position: absolute; 
+    bottom: 0px; 
+    background-color: rgb(124, 142, 190);
+}
+
+img{
+    width: 320px;
+    height: 25vmin;
+}
+
+.static {
+    position:absolute;
+    background: white;
+  }
+
