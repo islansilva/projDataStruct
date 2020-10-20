@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './paginas/pgInicial/pgInicial';
 import LDDE from './paginas/LDDE/LDDE';
 import HEAPS from './paginas/Heaps/Heaps';
-import FILA_CIRC from './paginas/Fila Circular/Circular';
+import FILA_CIRC from './paginas/FilaCircular/Circular';
 
 const Main = () => {
   return (
