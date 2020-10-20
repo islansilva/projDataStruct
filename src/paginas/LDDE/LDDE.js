@@ -1,14 +1,14 @@
 import React from 'react';
-import './LDDE.css';
+import '../paginas.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 function LDDE (){
     return(
         <div class="inicial">
             <div class="container">
-                <p></p>
+                < Navbar/>
             </div>
         </div> 
     )
 }
-    
 export default LDDE;

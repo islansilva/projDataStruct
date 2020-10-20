@@ -1,15 +1,11 @@
 import React from 'react';
-import './circular.css';
-import Numeros from './Inc&Dec';
+import '../paginas.css';
 import Navbar from '../../components/Navbar/Navbar';
 
 function Circular (){
     return(
-        <div class="inicial">
-            <div class="container">
-                <div>
-                    <Numeros/>
-                </div>
+        <div className="inicial">
+            <div className="container">
                 <div>
                     <Navbar/>
                 </div>
