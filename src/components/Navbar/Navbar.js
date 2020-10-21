@@ -4,15 +4,23 @@ import * as FiIcons from "react-icons/fi";
 import * as FaIcons from "react-icons/fa";
 import SidebarData from './SideBarData';
 import './Navbar.css';
-import { IconContext } from 'react-icons'
- 
+import { IconContext } from 'react-icons';
+import {
+    ProSidebar,
+    Menu,
+    MenuItem,
+    SubMenu,
+    SidebarContent,
+  } from 'react-pro-sidebar'; 
 
-function Navbar(){
-    const [sidebar, setSidebar] = useState(false);
-    const showSidebar = ()=> setSidebar(!sidebar)
+function Navbar(props){
+    //const classe = props.classe;
+    const[sidebar, setSidebar] = useState(0),
+    showSidebar = ()=> setSidebar(!sidebar)
 
         return(
             <>
+            
             <IconContext.Provider value={{color:'red'}}>
                 <div className="navbar">
                     <Link to="#" className="menu-bars">
@@ -29,22 +37,41 @@ function Navbar(){
                                 <FiIcons.FiChevronLeft/>
                             </Link>
                         </li>
+                        <ProSidebar>
+                        <SidebarContent>
+                        <Menu>
                         {SidebarData.map((item, index)=>{
                             return(
-                                <li key={index} className={item.cName}>
-                                    <Link to={item.path}>
-                                        {item.icon}
+                                <SubMenu
+                                className = "subNavBar"
+                                title={<span key={index} className='nav-text'>
+                                <Link to={item.path}>
+                                    {item.icon}
                                     <span>{item.title}</span>
-                                    </Link>
-                                </li>
+                                </Link>
+                            </span>}>
+                                <MenuItem className="subNavBar-text">
+                                    <span>{item.insere}</span>
+                                    <input type={item.type} style={{width:80}} />
+                                    <input type='button' style={{width:30,backgroundColor:'red'}} value="Go!">
+                                    </input>
+                                </MenuItem>
+                                
+                            </SubMenu>
                             )
                         })}
+                        </Menu>
+                    </SidebarContent>
+                    </ProSidebar>
                     </ul>
+                
                 </nav>
+                
+                
             </IconContext.Provider>
+            
             </>
         )
-
 
 }
 

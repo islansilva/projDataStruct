@@ -1,30 +1,40 @@
 import React from 'react';
 import * as IoIcons from "react-icons/io";
+//import ResolveLDDE from '../../paginas/LDDE/ResolveLDDE'
+
 
 const SideBarData = [
     {
         title: 'Create',
         path: '/',
         icon: <IoIcons.IoMdCreate/>,
-        cName: 'nav-text'
+        cName: 'create',
+        type: 'text',
+        insere: 'Array:'
     },
     {
         title: 'Remove',
         path: '/',
-        icon: <IoIcons.IoIosRemoveCircle/>,
-        cName: 'nav-text'
+        icon: <IoIcons.IoIosRemoveCircleOutline/>,
+        cName: 'remove',
+        type: 'number',
+        insere: 'V :'
     },
     {
         title: 'Insert',
         path: '/',
-        icon: <IoIcons.IoIosAddCircle/>,
-        cName: 'nav-text'
+        icon: <IoIcons.IoIosAddCircleOutline/>,
+        cName: 'insert',
+        type: 'number',
+        insere: 'V :'
     },
     {
         title: 'Search',
         path: '/',
         icon: <IoIcons.IoIosSearch/>,
-        cName: 'nav-text'
+        cName: 'search',
+        type: 'number',
+        insere: 'V :'
     }
 ]
 
