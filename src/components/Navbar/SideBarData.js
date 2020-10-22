@@ -5,13 +5,14 @@ import * as FiIcons from "react-icons/fi";
 
 export default class SideBarData extends Component {
 
-    handleClick = () => this.props.onClick(this.props.index)
+    handleClick = () => {
+        return this.props.onClick(this.props.index)
+    }
 
     render() {
         return (
-            <div>
-                <li style={{outline:0}} className = {(this.props.isActive) ? ('subNavBar-active') : ('subNavBar')} onClick = {this.handleClick}>
-                    <div className='nav-text'>
+                <li style={{outline:0}} className = {(this.props.isActive) ? ('subNavBar-active') : ('subNavBar')} >
+                    <div className='nav-text' onClick = {this.handleClick}>
                         <Link to="#" >
                             {this.props.icon}
                             <span>{this.props.name}</span>
@@ -20,6 +21,7 @@ export default class SideBarData extends Component {
                             </span>
                         </Link>
                     </div>
+
                     <ul className='subNavBar-text'style={{position:'relative',textAlign:'left'}} >
                         <li style={{fontSize:16}}>
                             {this.props.subName} 
@@ -28,7 +30,6 @@ export default class SideBarData extends Component {
                         </li>
                     </ul>    
                 </li>
-            </div>
         )
     }
 }

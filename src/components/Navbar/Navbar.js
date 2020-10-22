@@ -17,14 +17,21 @@ class Navbar extends Component{
         this.showNavBar = this.showNavBar.bind(this);
         this.state = {
             sidebar:false,
-            activeIndex: undefined
+            activeIndex: -1
         };
     }
     showNavBar(){
         this.setState({sidebar : !this.state.sidebar})
     }
 
-    handleClick = (index) => this.setState({activeIndex: index})
+    handleClick = (index) => {
+
+        if(this.state.activeIndex!==index) {
+            this.setState({activeIndex: index})
+        } else {
+            this.setState({activeIndex: -1})
+        }
+    }
 
     render(){
         
@@ -48,6 +55,7 @@ class Navbar extends Component{
                             </Link>
                         </li>                     
                             <li>
+                                
                                 <SideBarData name="Create" subName="Array : " type="text" icon={<IoIcons.IoMdCreate/>} index={0} isActive={this.state.activeIndex===0} onClick={this.handleClick}/>   
                             </li>
                             <li>                         

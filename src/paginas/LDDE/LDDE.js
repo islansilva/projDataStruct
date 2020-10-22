@@ -2,11 +2,9 @@ import React from 'react';
 import '../paginas.css';
 import Navbar from '../../components/Navbar/Navbar';
 
-class LDDE {
-    callapi = ()=>{
-        
-    }
-    render(){
+function LDDE() {
+    
+
         return(
             <div class="inicial">
                 <div class="container">
@@ -14,6 +12,5 @@ class LDDE {
                 </div>
             </div> 
         )
-    }
 }
 export default LDDE;
