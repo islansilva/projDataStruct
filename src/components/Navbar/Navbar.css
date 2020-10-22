@@ -80,7 +80,6 @@
 span {
     margin-left: 2px;
 }
-
 .subNavBar{
     color: beige;
 }
@@ -90,15 +89,58 @@ span {
     margin-right: 1%;
     position: relative;
     align-items: center;
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
 }
+
+.subNavBar-active .chevronSub {
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    }
+
 
 .subNavBar .subNavBar-text{
     display: none;
-    
+    transition: .2s;
 }
-.subNavBar:active .subNavBar-text{
+.subNavBar-active .subNavBar-text{
+    transition: .2s;
     display: block;
     
 }
 
+.subNavBar-text{
+    color: beige;
+    margin-left: 5%;
+    margin-right: auto;
+    position: absolute;
+    
+    font-family: Montserrat, sans-serif;
+}
+
+.dados{
+    width:80px;
+    height: 25px;
+    background-color:rgb(33, 31, 39);
+    color:beige;
+    caret-color: red;
+    border: none
+}
+
+.btnGo{
+    width: 30px;
+    height: 25px;
+    margin-left:4%;
+    background-color:red;
+    color:white;
+    outline:none;
+    border: none
+}
+
+.btnGo:hover{
+    background-color: rgb(235, 119, 25);
+}
 

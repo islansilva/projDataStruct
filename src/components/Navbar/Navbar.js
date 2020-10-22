@@ -5,6 +5,7 @@ import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io";
 import './Navbar.css';
 import { IconContext } from 'react-icons';
+import SideBarData from './SideBarData';
 
 
 class Navbar extends Component{
@@ -12,16 +13,20 @@ class Navbar extends Component{
     constructor(props){
         
         super(props);
-        this.aberto = this.showNavBar.bind(this);
+        this.showNavBar = this.showNavBar.bind(this);
+        this.showNavBar = this.showNavBar.bind(this);
         this.state = {
-            sidebar:false
+            sidebar:false,
+            activeIndex: undefined
         };
     }
     showNavBar(){
         this.setState({sidebar : !this.state.sidebar})
     }
 
-        render(){
+    handleClick = (index) => this.setState({activeIndex: index})
+
+    render(){
         
         return(
             <>
@@ -42,85 +47,17 @@ class Navbar extends Component{
                                 <FiIcons.FiChevronLeft/>
                             </Link>
                         </li>                     
-                                <li                         
-                                style={{outline:0}}
-                                className = {'subNavBar'}
-                                >
-                                
-                                <div className='nav-text' >
-                                        <Link to="#" >
-                                            <IoIcons.IoMdCreate/>
-                                            <span>Create</span>
-                                            <span className='chevronSub'>
-                                                <FiIcons.FiChevronRight/>
-                                            </span>
-                                        </Link>
-                                </div>
-                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
-                                    <li>
-                                        alooo    
-                                    </li>
-                                </ul>    
+                            <li>
+                                <SideBarData name="Create" subName="Array : " type="text" icon={<IoIcons.IoMdCreate/>} index={0} isActive={this.state.activeIndex===0} onClick={this.handleClick}/>   
                             </li>
-                                <li                         
-                                style={{outline:0}}
-                                className = {'subNavBar'}
-                                >
-                                
-                                <div className='nav-text' >
-                                        <Link to="#" >
-                                            <IoIcons.IoIosRemoveCircleOutline/>
-                                            <span>Remove</span>
-                                            <span className='chevronSub'>
-                                                <FiIcons.FiChevronRight/>
-                                            </span>
-                                        </Link>
-                                </div>
-                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
-                                    <li>
-                                        alooo    
-                                    </li>
-                                </ul>    
+                            <li>                         
+                                <SideBarData name="Remove" subName="V : " type="number" icon={<IoIcons.IoIosRemoveCircleOutline/>} index={1} isActive={this.state.activeIndex===1} onClick={this.handleClick}/>
                             </li>
-                                <li                         
-                                style={{outline:0}}
-                                className = {'subNavBar'}
-                                >
-                                
-                                <div className='nav-text' >
-                                        <Link to="#" >
-                                            <IoIcons.IoIosAddCircleOutline/>
-                                            <span>Insert</span>
-                                            <span className='chevronSub'>
-                                                <FiIcons.FiChevronRight/>
-                                            </span>
-                                        </Link>
-                                </div>
-                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
-                                    <li>
-                                        alooo    
-                                    </li>
-                                </ul>    
+                            <li>   
+                                <SideBarData name="Insert" subName="V : " type="number" icon={<IoIcons.IoIosAddCircleOutline/>} index={2} isActive={this.state.activeIndex===2} onClick={this.handleClick}/>
                             </li>
-                                <li                         
-                                style={{outline:0}}
-                                className = {'subNavBar'}
-                                >
-                                
-                                <div className='nav-text' >
-                                        <Link to="#" >
-                                            <IoIcons.IoIosSearch/>
-                                            <span>Search</span>
-                                            <span className='chevronSub'>
-                                                <FiIcons.FiChevronRight/>
-                                            </span>
-                                        </Link>
-                                </div>
-                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
-                                    <li>
-                                        alooo    
-                                    </li>
-                                </ul>    
+                            <li>  
+                                <SideBarData name="Search" subName="V : " type="number" icon={<IoIcons.IoIosSearch/>} index={3} isActive={this.state.activeIndex===3} onClick={this.handleClick}/>
                             </li>
                             
                         
