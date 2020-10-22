@@ -4,6 +4,7 @@
     display: flex;
     justify-items: start;
     align-items: center;
+    outline: none;
 }
 
 .menu-bars{
@@ -25,7 +26,7 @@
     justify-content: center;
     position: fixed;
     top: 0;
-    /* left: -100%; */
+    left: -100%;
     transition: 850ms;
 }
 
@@ -40,7 +41,9 @@
     align-items: center;
     padding: 0 0 10px 16px;
     list-style: none;
-    height: 10px;
+    height: 50px;
+    outline: 0;
+
 }
 
 .nav-text a{
@@ -52,6 +55,8 @@
     display: flex;
     align-items: center;
     padding: 0 16px;
+    outline: 0;
+    
 }
 
 .subNavBar:hover{
@@ -80,15 +85,20 @@ span {
     color: beige;
 }
 
-.subNavBar-text{
-    background-color: aquamarine;
-    color: #060b26;
-    font-size: 16pt;
-    height: 40px;
-    text-align: left;
+.chevronSub{
+    margin-left: auto;
+    margin-right: 1%;
     position: relative;
-    padding-left: 8%;
-    border-radius: 10px;
-    visibility: hidden;
+    align-items: center;
+}
+
+.subNavBar .subNavBar-text{
+    display: none;
     
 }
+.subNavBar:active .subNavBar-text{
+    display: block;
+    
+}
+
+

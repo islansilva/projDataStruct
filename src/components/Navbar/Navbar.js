@@ -1,68 +1,129 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import * as FiIcons from "react-icons/fi";
 import * as FaIcons from "react-icons/fa";
-import SidebarData from './SideBarData';
+import * as IoIcons from "react-icons/io";
 import './Navbar.css';
 import { IconContext } from 'react-icons';
-import {
-    ProSidebar,
-    Menu,
-    MenuItem,
-    SubMenu,
-    SidebarContent,
-  } from 'react-pro-sidebar'; 
 
-function Navbar(props){
+
+class Navbar extends Component{
     //const classe = props.classe;
-    const[sidebar, setSidebar] = useState(0),
-    showSidebar = ()=> setSidebar(!sidebar)
+    constructor(props){
+        
+        super(props);
+        this.aberto = this.showNavBar.bind(this);
+        this.state = {
+            sidebar:false
+        };
+    }
+    showNavBar(){
+        this.setState({sidebar : !this.state.sidebar})
+    }
 
+        render(){
+        
         return(
             <>
             
             <IconContext.Provider value={{color:'red'}}>
                 <div className="navbar">
                     <Link to="#" className="menu-bars">
-                        <FiIcons.FiChevronRight onClick ={showSidebar}/>
+                        <FiIcons.FiChevronRight onClick ={()=>this.showNavBar()}/>
                     </Link>
                     <Link to="/" className="menu-bars" id="home">
                     <FaIcons.FaHome/>
                     </Link>
                 </div>
-                <nav className={sidebar ? 'nav-menu active': 'nav-menu'}>
-                    <ul className='nav-menu-items' onClick ={showSidebar}>
-                        <li className='navbar-toggle'>
+                <nav className={this.state.sidebar ? 'nav-menu active': 'nav-menu'}>
+                    <ul className='nav-menu-items' >
+                        <li className='navbar-toggle' onClick ={(()=>this.showNavBar())}>
                             <Link to="#" className="menu-bars">
                                 <FiIcons.FiChevronLeft/>
                             </Link>
-                        </li>
-                        <ProSidebar>
-                        <SidebarContent>
-                        <Menu>
-                        {SidebarData.map((item, index)=>{
-                            return(
-                                <SubMenu
-                                className = "subNavBar"
-                                title={<span key={index} className='nav-text'>
-                                <Link to={item.path}>
-                                    {item.icon}
-                                    <span>{item.title}</span>
-                                </Link>
-                            </span>}>
-                                <MenuItem className="subNavBar-text">
-                                    <span>{item.insere}</span>
-                                    <input type={item.type} style={{width:80}} />
-                                    <input type='button' style={{width:30,backgroundColor:'red'}} value="Go!">
-                                    </input>
-                                </MenuItem>
+                        </li>                     
+                                <li                         
+                                style={{outline:0}}
+                                className = {'subNavBar'}
+                                >
                                 
-                            </SubMenu>
-                            )
-                        })}
-                        </Menu>
-                    </SidebarContent>
-                    </ProSidebar>
+                                <div className='nav-text' >
+                                        <Link to="#" >
+                                            <IoIcons.IoMdCreate/>
+                                            <span>Create</span>
+                                            <span className='chevronSub'>
+                                                <FiIcons.FiChevronRight/>
+                                            </span>
+                                        </Link>
+                                </div>
+                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
+                                    <li>
+                                        alooo    
+                                    </li>
+                                </ul>    
+                            </li>
+                                <li                         
+                                style={{outline:0}}
+                                className = {'subNavBar'}
+                                >
+                                
+                                <div className='nav-text' >
+                                        <Link to="#" >
+                                            <IoIcons.IoIosRemoveCircleOutline/>
+                                            <span>Remove</span>
+                                            <span className='chevronSub'>
+                                                <FiIcons.FiChevronRight/>
+                                            </span>
+                                        </Link>
+                                </div>
+                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
+                                    <li>
+                                        alooo    
+                                    </li>
+                                </ul>    
+                            </li>
+                                <li                         
+                                style={{outline:0}}
+                                className = {'subNavBar'}
+                                >
+                                
+                                <div className='nav-text' >
+                                        <Link to="#" >
+                                            <IoIcons.IoIosAddCircleOutline/>
+                                            <span>Insert</span>
+                                            <span className='chevronSub'>
+                                                <FiIcons.FiChevronRight/>
+                                            </span>
+                                        </Link>
+                                </div>
+                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
+                                    <li>
+                                        alooo    
+                                    </li>
+                                </ul>    
+                            </li>
+                                <li                         
+                                style={{outline:0}}
+                                className = {'subNavBar'}
+                                >
+                                
+                                <div className='nav-text' >
+                                        <Link to="#" >
+                                            <IoIcons.IoIosSearch/>
+                                            <span>Search</span>
+                                            <span className='chevronSub'>
+                                                <FiIcons.FiChevronRight/>
+                                            </span>
+                                        </Link>
+                                </div>
+                                <ul className='subNavBar-text'style={{position:'relative',textAlign:'left',color:'red'}} >
+                                    <li>
+                                        alooo    
+                                    </li>
+                                </ul>    
+                            </li>
+                            
+                        
                     </ul>
                 
                 </nav>
@@ -72,6 +133,8 @@ function Navbar(props){
             
             </>
         )
+            
+    }
 
 }
 
