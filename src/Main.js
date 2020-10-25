@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from './paginas/pgInicial/pgInicial';
-import LDDE from './paginas/LDDE/LDDE';
-import HEAPS from './paginas/Heaps/Heaps';
-import FILA_CIRC from './paginas/FilaCircular/Circular';
+import Home from './components/paginas/pgInicial/pgInicial';
+import LDDE from './components/paginas/LDDE/LDDE';
+import HEAPS from './components/paginas/Heaps/Heaps';
+import FILA_CIRC from './components/paginas/FilaCircular/Circular';
 
 const Main = () => {
   return (

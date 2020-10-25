@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from '../../images/logo_est_dados_2.png';
-import LDDE from '../../images/list.png';
-import LDDEgif from '../../gif/LDDE.gif';
-import F_CIRC from '../../images/filaCircular.jpg';
-import f_circ from '../../gif/fila_circular.gif';
-import HEAP from '../../images/heap (1).png';
-import HEAPgif from '../../gif/heap.gif';
+import logo from '../../../images/logo_est_dados_2.png';
+import LDDE from '../../../images/list.png';
+import LDDEgif from '../../../gif/LDDE.gif';
+import F_CIRC from '../../../images/filaCircular.jpg';
+import f_circ from '../../../gif/fila_circular.gif';
+import HEAP from '../../../images/heap (1).png';
+import HEAPgif from '../../../gif/heap.gif';
 import './pgInicial.css';
 
 
