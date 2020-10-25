@@ -7,7 +7,7 @@ function Circular (){
         <div className="inicial">
             <div className="container">
                 <div>
-                    <Navbar/>
+                <Navbar/>
                 </div>
             </div>
         </div> 

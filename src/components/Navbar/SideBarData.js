@@ -22,10 +22,10 @@ export default class SideBarData extends Component {
                         </Link>
                     </div>
 
-                    <ul className='subNavBar-text'style={{position:'relative',textAlign:'left'}} >
+                    <ul className='subNavBar-text' >
                         <li style={{fontSize:16}}>
                             {this.props.subName} 
-                            <input className="dados"type={this.props.type}></input>
+                            <input contenteditable className="dados"type={this.props.type} defaultValue={this.props.preValue}></input>
                             <input className="btnGo"type="button" value='Go!'></input>
                         </li>
                     </ul>    

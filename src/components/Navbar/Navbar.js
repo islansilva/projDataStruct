@@ -34,11 +34,9 @@ class Navbar extends Component{
     }
 
     render(){
-        
         return(
             <>
-            
-            <IconContext.Provider value={{color:'red'}}>
+                <IconContext.Provider value={{color:'red'}}>
                 <div className="navbar">
                     <Link to="#" className="menu-bars">
                         <FiIcons.FiChevronRight onClick ={()=>this.showNavBar()}/>
@@ -46,17 +44,23 @@ class Navbar extends Component{
                     <Link to="/" className="menu-bars" id="home">
                     <FaIcons.FaHome/>
                     </Link>
+                    
                 </div>
+                </IconContext.Provider>
                 <nav className={this.state.sidebar ? 'nav-menu active': 'nav-menu'}>
+                    
                     <ul className='nav-menu-items' >
-                        <li className='navbar-toggle' onClick ={(()=>this.showNavBar())}>
-                            <Link to="#" className="menu-bars">
-                                <FiIcons.FiChevronLeft/>
-                            </Link>
-                        </li>                     
-                            <li>
-                                
-                                <SideBarData name="Create" subName="Array : " type="text" icon={<IoIcons.IoMdCreate/>} index={0} isActive={this.state.activeIndex===0} onClick={this.handleClick}/>   
+                        <IconContext.Provider value={{color:'red'}}>
+                            <li className='navbar-toggle' onClick ={(()=>this.showNavBar())}>
+                                <Link to="#" className="menu-bars">
+                                    <FiIcons.FiChevronLeft/>
+                                </Link>
+                        
+                            </li>     
+                        </IconContext.Provider>
+                        <IconContext.Provider value={{color:'red'}}>                
+                            <li>                        
+                                <SideBarData name="Create" subName="Array : " preValue={'0,5,3,20,10'} type="text" icon={<IoIcons.IoMdCreate/>} index={0} isActive={this.state.activeIndex===0} onClick={this.handleClick}/>   
                             </li>
                             <li>                         
                                 <SideBarData name="Remove" subName="V : " type="number" icon={<IoIcons.IoIosRemoveCircleOutline/>} index={1} isActive={this.state.activeIndex===1} onClick={this.handleClick}/>
@@ -67,20 +71,21 @@ class Navbar extends Component{
                             <li>  
                                 <SideBarData name="Search" subName="V : " type="number" icon={<IoIcons.IoIosSearch/>} index={3} isActive={this.state.activeIndex===3} onClick={this.handleClick}/>
                             </li>
-                            
+                        </IconContext.Provider>
+                        <li>
+                            <a href='https://github.com/islansilva/projDataStruct' className="linkToGit">
+                                <span><IoIcons.IoLogoGithub/>GitHub</span>
+                            </a>
+                        </li>
                         
                     </ul>
-                
+                    
+                    
                 </nav>
-                
-                
-            </IconContext.Provider>
             
             </>
         )
-            
     }
-
 }
 
 export default Navbar

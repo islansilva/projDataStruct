@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #060b26;
+    background:#060b26;
     height: 80px;
     display: flex;
     justify-items: start;
@@ -19,9 +19,9 @@
 }
 
 .nav-menu{
-    background-color: #060b26;
     width: 200px;
     height: 100vh;
+    background: #060b26;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -31,6 +31,8 @@
 }
 
 .nav-menu.active{
+    background: #060b26;
+    height: 100vh;
     left: 0;
     transition: 300ms;
 }
@@ -69,7 +71,6 @@
 }
 
 .navbar-toggle {
-    background-color: #060b26;
     width: 100%;
     height: 80px;
     display: flex;
@@ -114,10 +115,7 @@ span {
 
 .subNavBar-text{
     color: beige;
-    margin-left: 5%;
-    margin-right: auto;
-    position: absolute;
-    
+    display: flex;
     font-family: Montserrat, sans-serif;
 }
 
@@ -127,13 +125,19 @@ span {
     background-color:rgb(33, 31, 39);
     color:beige;
     caret-color: red;
-    border: none
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 12pt;
+
 }
 
+
 .btnGo{
+    margin-left: 5%;
     width: 30px;
     height: 25px;
-    margin-left:4%;
     background-color:red;
     color:white;
     outline:none;
@@ -142,5 +146,23 @@ span {
 
 .btnGo:hover{
     background-color: rgb(235, 119, 25);
+}
+
+.linkToGit{
+    color: grey;
+    text-decoration: none;
+    display: flex;
+    justify-content:center;
+    margin-top: 60vh;
+}
+
+.linkToGit span{
+    border-style: solid;
+    border-width: 0.1vh;
+    border-radius: 10%;
+}
+
+.linkToGit:hover span{
+    color: white;
 }
 

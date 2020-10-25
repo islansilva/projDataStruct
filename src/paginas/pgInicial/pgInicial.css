@@ -48,11 +48,10 @@ p.selOpcao {
 }
 
 div.opcoes {
-    width: 85vw;
-    padding-top: 10px;
-    align-items: center;
-    justify-content: space-around;
+    width: 95%;
+    padding-top: 3vh;
     display: flex;
+    justify-content: space-around;
     font-size: calc(3px + 2vmin);  
 }
 
@@ -70,10 +69,8 @@ div.opcoes a:hover {
 }
 
 div.menu {
-    width: 33vw;
-    height: 300px;
-    align-items: center;
-    justify-content: center;
+    width: 30vw;
+    height: 30vh;
     background-color: rgba(55, 204, 204, 0.295);  
     position: relative; 
     transition: all .3s ease-in-out
@@ -90,19 +87,18 @@ div.menu:hover .nextPage{
 }
 
 div.nextPage{
-    width: 33vw;
+    width: 30vw;
     position: absolute; 
     bottom: 0px; 
     background-color: rgb(124, 142, 190);
 }
 
 img{
-    width: 25vw;
-    height: 25vmin;
+    width: 24vw;
+    height: 25vh;
 }
 
 .static {
     position:absolute;
-    background: white;
   }
 
