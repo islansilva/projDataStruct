@@ -4,10 +4,29 @@ import * as FiIcons from "react-icons/fi";
 
 
 export default class SideBarData extends Component {
+    constructor(props){
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        
+        this.state={
+            number : undefined
+        }
+    }
+    handleChange = (value)=>{
+        this.setState({number : value});
+    }
 
     handleClick = () => {
         return this.props.onClick(this.props.index)
     }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.handleSubmit(this.state.number);
+    }
+
 
     render() {
         return (
@@ -25,8 +44,15 @@ export default class SideBarData extends Component {
                     <ul className='subNavBar-text' >
                         <li style={{fontSize:16}}>
                             {this.props.subName} 
-                            <input contenteditable className="dados"type={this.props.type} defaultValue={this.props.preValue}></input>
-                            <input className="btnGo"type="button" value='Go!'></input>
+                            <input contenteditable 
+                                autoComplete ="off"
+                                id="inputValue"
+                                onChange={()=>this.handleChange(document.getElementById("inputValue").value)}
+                                className="dados"
+                                type={this.props.type}
+                                placeholder={this.props.preValue}>
+                            </input>
+                            <input className="btnGo"type="button" value='Go!' onClick={this.handleSubmit}></input>
                         </li>
                     </ul>    
                 </li>

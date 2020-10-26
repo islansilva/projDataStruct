@@ -14,10 +14,12 @@ class Navbar extends Component{
         
         super(props);
         this.showNavBar = this.showNavBar.bind(this);
-        this.showNavBar = this.showNavBar.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             sidebar:false,
-            activeIndex: -1
+            activeIndex: -1,
+            number: undefined
         };
     }
     showNavBar(){
@@ -31,6 +33,10 @@ class Navbar extends Component{
         } else {
             this.setState({activeIndex: -1})
         }
+    }
+
+    handleSubmit = (n) =>{
+        this.props.handleSubmit(n);
     }
 
     render(){
@@ -60,16 +66,53 @@ class Navbar extends Component{
                         </IconContext.Provider>
                         <IconContext.Provider value={{color:'red'}}>                
                             <li>                        
-                                <SideBarData name="Create" subName="Array : " preValue={'0,5,3,20,10'} type="text" icon={<IoIcons.IoMdCreate/>} index={0} isActive={this.state.activeIndex===0} onClick={this.handleClick}/>   
+                                <SideBarData 
+                                    name="Create" 
+                                    subName="Array : " 
+                                    preValue={'0,5,3,20,10'} 
+                                    type="text" 
+                                    icon={<IoIcons.IoMdCreate/>} 
+                                    index={0} 
+                                    isActive={this.state.activeIndex===0} 
+                                    onClick={this.handleClick}
+                                    handleSubmit={this.handleSubmit}
+                                    />   
                             </li>
                             <li>                         
-                                <SideBarData name="Remove" subName="V : " type="number" icon={<IoIcons.IoIosRemoveCircleOutline/>} index={1} isActive={this.state.activeIndex===1} onClick={this.handleClick}/>
+                                <SideBarData 
+                                    name="Remove" 
+                                    subName="V : " 
+                                    type="number" 
+                                    icon={<IoIcons.IoIosRemoveCircleOutline/>} 
+                                    index={1} 
+                                    isActive={this.state.activeIndex===1} 
+                                    onClick={this.handleClick}
+                                    handleSubmit={this.handleSubmit}
+                                />
                             </li>
                             <li>   
-                                <SideBarData name="Insert" subName="V : " type="number" icon={<IoIcons.IoIosAddCircleOutline/>} index={2} isActive={this.state.activeIndex===2} onClick={this.handleClick}/>
+                                <SideBarData 
+                                    name="Insert" 
+                                    subName="V : " 
+                                    type="number" 
+                                    icon={<IoIcons.IoIosAddCircleOutline/>} 
+                                    index={2} 
+                                    isActive={this.state.activeIndex===2} 
+                                    onClick={this.handleClick}
+                                    handleSubmit={this.handleSubmit}
+                                />
                             </li>
                             <li>  
-                                <SideBarData name="Search" subName="V : " type="number" icon={<IoIcons.IoIosSearch/>} index={3} isActive={this.state.activeIndex===3} onClick={this.handleClick}/>
+                                <SideBarData 
+                                    name="Search" 
+                                    subName="V : " 
+                                    type="number" 
+                                    icon={<IoIcons.IoIosSearch/>} 
+                                    index={3} 
+                                    isActive={this.state.activeIndex===3} 
+                                    onClick={this.handleClick}
+                                    handleSubmit={this.handleSubmit}
+                                />
                             </li>
                         </IconContext.Provider>
                         <li>
@@ -79,7 +122,6 @@ class Navbar extends Component{
                         </li>
                         
                     </ul>
-                    
                     
                 </nav>
             
