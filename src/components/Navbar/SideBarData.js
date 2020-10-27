@@ -11,19 +11,18 @@ export default class SideBarData extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         
         this.state={
-            number : undefined
+            number : 0
         }
     }
-    handleChange = (value)=>{
-        this.setState({number : value});
+    handleChange = (e)=>{
+        this.setState({number : e.target.value});
     }
 
     handleClick = () => {
         return this.props.onClick(this.props.index)
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
+    handleSubmit = () => {
         this.props.handleSubmit(this.state.number);
     }
 
@@ -44,10 +43,10 @@ export default class SideBarData extends Component {
                     <ul className='subNavBar-text' >
                         <li style={{fontSize:16}}>
                             {this.props.subName} 
-                            <input contenteditable 
+                            <input 
                                 autoComplete ="off"
                                 id="inputValue"
-                                onChange={()=>this.handleChange(document.getElementById("inputValue").value)}
+                                onChange={this.handleChange}
                                 className="dados"
                                 type={this.props.type}
                                 placeholder={this.props.preValue}>

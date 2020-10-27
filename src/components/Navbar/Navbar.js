@@ -116,7 +116,11 @@ class Navbar extends Component{
                             </li>
                         </IconContext.Provider>
                         <li>
-                            <a href='https://github.com/islansilva/projDataStruct' className="linkToGit">
+                            <a 
+                            href='https://github.com/islansilva/projDataStruct' 
+                            className="linkToGit" 
+                            target="_blank"
+                            rel="noopener noreferrer">
                                 <span><IoIcons.IoLogoGithub/>GitHub</span>
                             </a>
                         </li>
